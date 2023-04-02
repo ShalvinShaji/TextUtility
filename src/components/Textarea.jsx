@@ -41,24 +41,36 @@ export default function Textarea(props) {
   
   }
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text)
+  const copyToClipboard = () => {
+    let copyText=document.getElementById('textbox');
+    copyText.select();
+    navigator.clipboard.writeText(copyText.value);
   }
   
 
   return (
 <>
 <div className='container'>
-  <h3 className='mt-5'>Enter the {props.type} for conversion:</h3>
-  <textarea value={text} placeholder="Enter the text here..." className="form-control" onClick={clearTextarea} onChange={changeUp} id="exampleFormControlTextarea1" rows="8"></textarea>
-  <div className="d-flex justify-content-start">
-    <button className='btn btn-danger me-3 mt-3' onClick={convertUppercase} >Convert to Uppercase</button>
-    <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
-    <button className='btn btn-danger me-3 mt-3' onClick={clearText} >Clear Text</button>
-    <button className='btn btn-danger me-3 mt-3' onClick={copyToClipboard(text)} >Copy to Clipboard</button>
-  </div>
+  <h3 className='mt-4'>Enter the {props.type} for conversion:</h3>
+  <textarea value={text} placeholder="Enter the text here..." className="form-control" onClick={clearTextarea} onChange={changeUp} id="textbox" rows="8"></textarea>
+<div className="row d-flex">
+    <div className="col-md-6 d-flex flex-column justify-content-center">
+            <button className='btn btn-danger me-3 mt-3' onClick={convertUppercase} >Convert to Uppercase</button>
+            <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
+            <button className='btn btn-danger me-3 mt-3' onClick={copyToClipboard} >Copy to Clipboard</button>
+            <button className='btn btn-danger me-3 mt-3 ' onClick={clearText} >Clear Text</button>
+    </div>
+    <div className="col-md-6 d-flex flex-column justify-content-center">
+            <button className='btn btn-danger me-3 mt-3' onClick={convertUppercase} >Convert to Uppercase</button>
+            <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
+            <button className='btn btn-danger me-3 mt-3 ' onClick={copyToClipboard} >Copy to Clipboard</button>
+            <button className='btn btn-danger me-3 mt-3' onClick={clearText} >Clear Text</button>
+    </div>
+   
 </div>
-<div className="container mt-5">
+  
+</div>
+<div className="container mt-4">
   <h3>Text summary</h3>
   <p>{wordCount(text)} of words and {countCharacters(text)} of charecters.</p>
   <p>{0.008 * wordCount(text)} minutes of read.</p>
