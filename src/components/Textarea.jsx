@@ -46,6 +46,11 @@ export default function Textarea(props) {
     copyText.select();
     navigator.clipboard.writeText(copyText.value);
   }
+
+  const RemoveExtraSpace = () => {
+    let newText=text.split(/[ ]+/);
+    setText(newText.join(" "));
+ }
   
 
   return (
@@ -61,7 +66,7 @@ export default function Textarea(props) {
             <button className='btn btn-danger me-3 mt-3 ' onClick={clearText} >Clear Text</button>
     </div>
     <div className="col-md-6 d-flex flex-column justify-content-center">
-            <button className='btn btn-danger me-3 mt-3' onClick={convertUppercase} >Convert to Uppercase</button>
+            <button className='btn btn-danger me-3 mt-3' onClick={RemoveExtraSpace} >Remove Extra Space</button>
             <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
             <button className='btn btn-danger me-3 mt-3 ' onClick={copyToClipboard} >Copy to Clipboard</button>
             <button className='btn btn-danger me-3 mt-3' onClick={clearText} >Clear Text</button>
