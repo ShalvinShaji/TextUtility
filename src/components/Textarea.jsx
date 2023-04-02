@@ -59,17 +59,14 @@ export default function Textarea(props) {
   <h3 className='mt-4'>Enter the {props.type} for conversion:</h3>
   <textarea value={text} placeholder="Enter the text here..." className="form-control" onClick={clearTextarea} onChange={changeUp} id="textbox" rows="8"></textarea>
 <div className="row d-flex">
-    <div className="col-md-6 d-flex flex-column justify-content-center">
-            <button className='btn btn-danger me-3 mt-3' onClick={convertUppercase} >Convert to Uppercase</button>
-            <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
-            <button className='btn btn-danger me-3 mt-3' onClick={copyToClipboard} >Copy to Clipboard</button>
-            <button className='btn btn-danger me-3 mt-3 ' onClick={clearText} >Clear Text</button>
+    <div className="col-md-6 d-flex justify-content-center justify-content-lg-evenly">
+            <button className='btn btn-danger mx-3 mt-3 w-25' onClick={convertUppercase} >Convert to Uppercase</button>
+            <button className='btn btn-danger mx-3 mt-3 w-25' onClick={convertLowercase} >Convert to Lowercase</button>
+            <button className='btn btn-danger  mt-3 w-25' onClick={copyToClipboard} >Copy to Clipboard</button>
     </div>
-    <div className="col-md-6 d-flex flex-column justify-content-center">
-            <button className='btn btn-danger me-3 mt-3' onClick={RemoveExtraSpace} >Remove Extra Space</button>
-            <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
-            <button className='btn btn-danger me-3 mt-3 ' onClick={copyToClipboard} >Copy to Clipboard</button>
-            <button className='btn btn-danger me-3 mt-3' onClick={clearText} >Clear Text</button>
+    <div className="col-md-6 d-flex  justify-content-center justify-content-lg-start">
+            <button className='btn btn-danger me-3 mt-3 w-25' onClick={RemoveExtraSpace} >Remove Extra Space</button>
+            <button className='btn btn-danger mx-3 mt-3  w-25' onClick={clearText} >Clear Text</button>
     </div>
    
 </div>
